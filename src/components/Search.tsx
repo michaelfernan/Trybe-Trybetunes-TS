@@ -2,14 +2,13 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import searchAlbumsAPI from '../services/searchAlbumsAPI';
 import LoadingMessage from './LoadingMessage';
-import { AlbumType } from '../types'; // Importe o tipo correto
+import { AlbumType } from '../types';
 
 function Search() {
-  const navigate = useNavigate();
   const [artistName, setArtistName] = useState('');
   const [loading, setLoading] = useState(false);
-  const [albums, setAlbums] = useState<AlbumType[]>([]); // Defina o tipo aqui
-  const [searchedArtist, setSearchedArtist] = useState<string>(''); // Defina o tipo de string
+  const [albums, setAlbums] = useState<AlbumType[]>([]);
+  const [searchedArtist, setSearchedArtist] = useState<string>('');
 
   const handleArtistNameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setArtistName(event.target.value);
