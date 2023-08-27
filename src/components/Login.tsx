@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { createUser } from '../services/userAPI';
 import LoadingMessage from './LoadingMessage';
+import './Login.css';
 
 function Login() {
   const navigate = useNavigate();
