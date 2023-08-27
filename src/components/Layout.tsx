@@ -1,6 +1,15 @@
+// src/components/Layout.tsx
+
+import React from 'react';
+import { Outlet } from 'react-router-dom';
+import Header from './Header';
+
 function Layout() {
   return (
-    <p>Layout</p>
+    <div>
+      <Header />
+      <Outlet />
+    </div>
   );
 }
 

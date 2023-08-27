@@ -1,7 +1,23 @@
-function MusicCar() {
+import React from 'react';
+
+interface MusicCardProps {
+  trackName: string;
+  previewUrl: string;
+}
+
+function MusicCard({ trackName, previewUrl }: MusicCardProps) {
   return (
-    <p>MusicCar</p>
+    <div>
+      <h3>{trackName}</h3>
+      <audio data-testid="audio-component" src={ previewUrl } controls>
+        <track kind="captions" />
+        O seu navegador não suporta o elemento
+        {' '}
+        <code>audio</code>
+        .
+      </audio>
+    </div>
   );
 }
 
-export default MusicCar;
+export default MusicCard;
