@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import searchAlbumsAPI from '../services/searchAlbumsAPI';
 import LoadingMessage from './LoadingMessage';
 import { AlbumType } from '../types';
 
 function Search() {
-  const navigate = useNavigate();
   const [artistName, setArtistName] = useState('');
   const [loading, setLoading] = useState(false);
   const [albums, setAlbums] = useState<AlbumType[]>([]);
