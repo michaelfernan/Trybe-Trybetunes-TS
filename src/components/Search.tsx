@@ -30,10 +30,6 @@ function Search() {
     }
   };
 
-  const handleAlbumClick = (collectionId: number) => {
-    navigate(`/album/${collectionId}`);
-  };
-
   return (
     <div>
       <h2>Pesquisar Artista</h2>

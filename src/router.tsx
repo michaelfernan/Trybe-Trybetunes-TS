@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import Login from './components/Login';
 import Search from './components/Search';
 import Album from './components/Album';
@@ -10,6 +10,7 @@ import NotFoud from './components/NotFoud';
 
 function AppRouter() {
   return (
+
     <Routes>
       <Route path="/" element={ <Login /> } />
       <Route path="/search" element={ <Search /> } />
