@@ -20,7 +20,7 @@ function Login() {
       try {
         await createUser({ name });
         setIsLoading(false);
-        navigate('/search'); // Redirecionamento após o login
+        navigate('/search');
       } catch (error) {
         console.error('Erro ao criar usuário:', error);
         setIsLoading(false);

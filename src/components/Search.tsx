@@ -5,6 +5,7 @@ import LoadingMessage from './LoadingMessage';
 import { AlbumType } from '../types';
 
 function Search() {
+  const navigate = useNavigate();
   const [artistName, setArtistName] = useState('');
   const [loading, setLoading] = useState(false);
   const [albums, setAlbums] = useState<AlbumType[]>([]);
@@ -63,7 +64,7 @@ function Search() {
           {albums.map((album) => (
             <li key={ album.collectionId }>
               <a
-                href={ `/album/${album.collectionId}` } // Correção aqui
+                href={ `/album/${album.collectionId}` }
                 data-testid={ `link-to-album-${album.collectionId}` }
               >
                 {album.collectionName}
