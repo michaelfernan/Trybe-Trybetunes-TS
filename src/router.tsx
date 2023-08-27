@@ -10,18 +10,17 @@ import NotFoud from './components/NotFoud';
 
 function AppRouter() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={ <Login /> } />
-        <Route path="/search" element={ <Search /> } />
-        <Route path="/album/:id" element={ <Album /> } />
-        <Route path="/favorites" element={ <Favorites /> } />
-        <Route path="/profile" element={ <Profile /> } />
-        <Route path="/profile/edit" element={ <ProfileEdit /> } />
-        <Route path="*" element={ <NotFoud /> } />
+    <Routes>
+      <Route path="/" element={ <Login /> } />
+      <Route path="/search" element={ <Search /> } />
+      <Route path="/album/:id" element={ <Album /> } />
+      <Route path="/favorites" element={ <Favorites /> } />
+      <Route path="/profile" element={ <Profile /> } />
+      <Route path="/profile/edit" element={ <ProfileEdit /> } />
+      <Route path="*" element={ <NotFoud /> } />
 
-      </Routes>
-    </BrowserRouter>
+    </Routes>
+
   );
 }
 

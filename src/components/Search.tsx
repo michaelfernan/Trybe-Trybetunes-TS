@@ -1,16 +1,17 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { searchAlbumsAPI } from '../services/searchAlbumsAPIs';
+import searchAlbumsAPI from '../services/searchAlbumsAPI';
 import LoadingMessage from './LoadingMessage';
+import { AlbumType } from '../types'; // Importe o tipo correto
 
 function Search() {
   const navigate = useNavigate();
   const [artistName, setArtistName] = useState('');
   const [loading, setLoading] = useState(false);
-  const [albums, setAlbums] = useState([]);
-  const [searchedArtist, setSearchedArtist] = useState('');
+  const [albums, setAlbums] = useState<AlbumType[]>([]); // Defina o tipo aqui
+  const [searchedArtist, setSearchedArtist] = useState<string>(''); // Defina o tipo de string
 
-  const handleArtistNameChange = (event) => {
+  const handleArtistNameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setArtistName(event.target.value);
   };
 
@@ -20,13 +21,17 @@ function Search() {
     try {
       const response = await searchAlbumsAPI(artistName);
       setSearchedArtist(artistName);
-      setAlbums(response.results);
+      setAlbums(response);
     } catch (error) {
       console.error('Erro ao pesquisar álbuns:', error);
     } finally {
       setLoading(false);
       setArtistName('');
     }
+  };
+
+  const handleAlbumClick = (collectionId: number) => {
+    navigate(`/album/${collectionId}`);
   };
 
   return (
@@ -63,7 +68,7 @@ function Search() {
           {albums.map((album) => (
             <li key={ album.collectionId }>
               <a
-                href={ `/album/${album.collectionId}` }
+                href={ `/album/${album.collectionId}` } // Correção aqui
                 data-testid={ `link-to-album-${album.collectionId}` }
               >
                 {album.collectionName}
