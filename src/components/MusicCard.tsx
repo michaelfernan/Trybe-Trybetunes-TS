@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 import checkedHeartImage from '../images/checked_heart.png';
 import emptyHeartImage from '../images/empty_heart.png';
 
-interface MusicCardProps {
+type MusicCardProps = {
   trackName: string;
   previewUrl: string;
   trackId: number;
-}
+};
 
 function MusicCard({ trackName, previewUrl, trackId }: MusicCardProps) {
   const [isFavorite, setIsFavorite] = useState(false);

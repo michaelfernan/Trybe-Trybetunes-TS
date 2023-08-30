@@ -2,12 +2,12 @@ import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import Login from './Pages/Login';
 import Layout from './components/Layout';
-import Search from './components/Search';
+import Search from './Pages/Search';
 import Album from './components/Album';
-import Favorites from './components/Favorites';
-import Profile from './components/Profile';
-import ProfileEdit from './components/ProfileEdit';
-import NotFound from './components/NotFound';
+import Favorites from './Pages/Favorites';
+import Profile from './Pages/Profile';
+import ProfileEdit from './Pages/ProfileEdit';
+import NotFound from './Pages/NotFound';
 
 function AppRouter() {
   return (
