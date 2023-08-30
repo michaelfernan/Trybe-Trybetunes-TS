@@ -1,5 +1,3 @@
-import '../Global.css';
-
 function NotFound() {
   return (
     <p>NotFoud</p>

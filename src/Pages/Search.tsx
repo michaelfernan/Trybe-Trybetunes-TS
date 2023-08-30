@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import searchAlbumsAPI from '../services/searchAlbumsAPI';
 import LoadingMessage from '../components/LoadingMessage';
 import { AlbumType } from '../types';
-import '../Global.css';
 
 function Search() {
   const [artistName, setArtistName] = useState('');
