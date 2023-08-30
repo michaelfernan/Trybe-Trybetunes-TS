@@ -6,13 +6,14 @@ type MusicCardProps = {
   trackName: string;
   previewUrl: string;
   trackId: number;
-};
+  isFavorite: boolean;
 
-function MusicCard({ trackName, previewUrl, trackId }: MusicCardProps) {
-  const [isFavorite, setIsFavorite] = useState(false);
+};
+function MusicCard({ trackName, previewUrl, trackId, isFavorite }: MusicCardProps) {
+  const [isChecked, setIsChecked] = useState(isFavorite);
 
   const handleFavoriteToggle = () => {
-    setIsFavorite(!isFavorite);
+    setIsChecked(!isChecked);
   };
 
   return (
@@ -28,11 +29,11 @@ function MusicCard({ trackName, previewUrl, trackId }: MusicCardProps) {
       <label data-testid={ `checkbox-music-${trackId}` }>
         <input
           type="checkbox"
-          checked={ isFavorite }
+          checked={ isChecked }
           onChange={ handleFavoriteToggle }
         />
         <img
-          src={ isFavorite ? checkedHeartImage : emptyHeartImage }
+          src={ isChecked ? checkedHeartImage : emptyHeartImage }
           alt="favorite"
         />
       </label>
