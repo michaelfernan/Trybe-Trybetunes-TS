@@ -36,6 +36,11 @@ function ProfileEdit() {
     setFormData((prevData) => ({ ...prevData, [name]: value }));
   };
 
+  const handleTextareaChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
+    const { name, value } = event.target;
+    setFormData((prevData) => ({ ...prevData, [name]: value }));
+  };
+
   const handleSave = async () => {
     const { name, email } = formData;
 
@@ -100,7 +105,7 @@ function ProfileEdit() {
           <textarea
             name="description"
             value={ formData.description }
-            onChange={ handleInputChange }
+            onChange={ handleTextareaChange }
             data-testid="edit-input-description"
           />
         </label>
