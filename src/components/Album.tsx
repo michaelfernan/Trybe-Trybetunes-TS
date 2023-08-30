@@ -4,16 +4,16 @@ import getMusics from '../services/musicsAPI';
 import LoadingMessage from './LoadingMessage';
 import MusicCard from './MusicCard';
 
-interface AlbumInfo {
+type AlbumInfo = {
   artistName: string;
   collectionName: string;
-}
+};
 
-interface MusicInfo {
+type MusicInfo = {
   trackId: number;
   trackName: string;
   previewUrl: string;
-}
+};
 
 function Album() {
   const { id } = useParams<{ id: string }>();
